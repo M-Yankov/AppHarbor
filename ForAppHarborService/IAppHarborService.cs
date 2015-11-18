@@ -96,9 +96,6 @@
         /// ░░░░░░░░░███▄███▄▄▄▄███▄▄█▄▄█████░░░░░░░
          //////////////////////////////////////////////////////////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
         // Post != POST ?@!#@WE@ :@ @@@ @: @:@ :@:@: @:@:@ @::@ :@
-        /*
-
-        */
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "messages/sendMessage", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json)]
         void SendRealMessageMessage(ComplexStiupidShit data); // names must match and must be string !!

@@ -1,10 +1,10 @@
 ﻿namespace MessageQueueReceiver
 {
     using System;
-    using IronMQ;
-    using IronMQ.Data;
     using System.Threading;
     using CloudServices.Common;
+    using IronMQ;
+    using IronMQ.Data;
 
     public class MQReceiver
     {

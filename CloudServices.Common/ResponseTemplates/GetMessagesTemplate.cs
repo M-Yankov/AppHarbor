@@ -15,7 +15,7 @@
         <div>
             <ul>{0}</ul>
         </div>
-        <p>Refresh page for new </p>
+        <p>Refresh page for a new message. <i>It's a little buggy.</i></p>
         <a href=""/AppHarborService.svc/messages/send"">Send Message</a>
     </body>
 </html>";

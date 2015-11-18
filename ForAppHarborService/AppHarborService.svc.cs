@@ -1,42 +1,26 @@
 ﻿namespace ForAppHarborService
 {
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Net;
-    using System.Net.Http;
-    using System.Net.Http.Headers;
     using System.Net.Sockets;
     using System.ServiceModel.Web;
+    using System.Text;
     using CloudServices.Common;
     using CloudServices.Common.ResponseTemplates;
     using IronMQ;
     using IronMQ.Data;
-    using System.Text;
-    using System.IO;
-    using System;
-    using System.Reflection;
-    using System.Web.Http;
-    using System.Runtime.Serialization;
 
     public class AppHarborService : IAppHarborService
     {
-        //// Todo: Try just return some string. 
-        /* Public AppHarborService(){
-            this.data = new UnitOfWork();
-            }
-
-            FromQuestion.Compile().Invoke(question);
-            (MyEnum)Enum.Parse(typeOf(MyEnum) , value)
-        */
         public Stream GetMessage()
         {
             WebOperationContext context = WebOperationContext.Current;
             /* if (context.IncomingRequest.ContentType.Contains("/xml"))// /josn
              {
-             //WebOperationContext.Current.OutgoingResponse.Format = WebMessageFormat.Json;
-
-             }
-             */
+                WebOperationContext.Current.OutgoingResponse.Format = WebMessageFormat.Json;
+             }*/
 
             var client = new Client(GlobalConstatns.ProjectID, GlobalConstatns.Token);
             Queue queue = client.Queue("TelerikDemo");
@@ -85,12 +69,6 @@
             var sender = new Client(GlobalConstatns.ProjectID, GlobalConstatns.Token);
             Queue queue = sender.Queue("TelerikDemo");
             queue.Push(string.Format("{{{0}: {1}}}", localMachineIpAddress, data.Text));
-            //Console.WriteLine("Send message:");
-            //while (true)
-            //{
-            //    string message = Console.ReadLine();
-
-            //}
         }
 
         private string GetIpAddresFromLocalPc()

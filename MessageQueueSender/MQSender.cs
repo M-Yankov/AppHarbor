@@ -1,10 +1,9 @@
 ﻿namespace MessageQueueSender
 {
     using System;
-    using System.Net;
-    using System.Net.NetworkInformation;
-    using System.Net.Sockets;
     using System.Linq;
+    using System.Net;
+    using System.Net.Sockets;
     using CloudServices.Common;
     using IronMQ;
 
