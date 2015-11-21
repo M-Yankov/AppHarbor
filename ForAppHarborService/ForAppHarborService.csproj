@@ -86,6 +86,7 @@
     <Compile Include="AppHarborService.svc.cs">
       <DependentUpon>AppHarborService.svc</DependentUpon>
     </Compile>
+    <Compile Include="ClientProvider.cs" />
     <Compile Include="ComplexStiupidShit.cs" />
     <Compile Include="IAppHarborService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

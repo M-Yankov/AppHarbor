@@ -22,9 +22,8 @@
                 WebOperationContext.Current.OutgoingResponse.Format = WebMessageFormat.Json;
              }*/
 
-            var client = new Client(GlobalConstatns.ProjectID, GlobalConstatns.Token);
-            Queue queue = client.Queue("TelerikDemo");
-            IList<Message> messages = queue.Get(20);
+            //Queue queue = ClientProvider.GetClient().Queue("TelerikDemo").Get(20);
+            IList<Message> messages = ClientProvider.GetClient().Queue("TelerikDemo").Get(20);
 
             var result = new StringBuilder();
             if (messages.Count != 0)
@@ -40,11 +39,11 @@
             if (messages.Count > 10)
             {
                 int count = messages.Count;
-                int index = count - 1;
+                int index = 0;
                 while (count > 10)
                 {
-                    queue.DeleteMessage(messages[index]);
-                    index--;
+                    ClientProvider.GetClient().Queue("TelerikDemo").DeleteMessage(messages[index]);
+                    index++;
                     count--;
                 }
             }
